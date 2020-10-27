@@ -16,6 +16,7 @@
     "axios": "^0.19.2",
     "connected-react-router": "^6.8.0",
     "history": "^4.10.1",
+    "netlify-lambda": "^2.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.2.0",
@@ -30,7 +31,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serve": "netflify-lambda serve functions"
   },
   "eslintConfig": {
     "extends": "react-app"

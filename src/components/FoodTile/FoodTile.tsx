@@ -28,7 +28,7 @@ export const FoodTile: React.FC<Props> = (props: Props) => {
 
   const handleChange = (value: number) => () => {
     if (value < 0) {
-      value = 0;
+      value = 1;
     }
     if (onChange) {
       onChange(value);

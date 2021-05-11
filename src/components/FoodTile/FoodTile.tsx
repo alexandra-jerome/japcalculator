@@ -21,8 +21,6 @@ interface OwnProps {
   value: number;
 }
 
-type Props = OwnProps;
-
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://fake_user:fake_leak@cluster0.xybtu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -31,6 +29,8 @@ client.connect(err => {
   // perform actions on the collection object
   client.close();
 });
+
+type Props = OwnProps;
 
 export const FoodTile: React.FC<Props> = (props: Props) => {
   const { classes, imgSrc, name, value, onChange } = props;

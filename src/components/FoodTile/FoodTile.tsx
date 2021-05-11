@@ -23,12 +23,21 @@ interface OwnProps {
 
 type Props = OwnProps;
 
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://fake_user:fake_leak@cluster0.xybtu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
 export const FoodTile: React.FC<Props> = (props: Props) => {
   const { classes, imgSrc, name, value, onChange } = props;
 
   const handleChange = (value: number) => () => {
     if (value < 0) {
-      value = 1;
+      value = 0;
     }
     if (onChange) {
       onChange(value);
